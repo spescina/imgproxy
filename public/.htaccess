@@ -1,0 +1,9 @@
+# ------------------------------------------------------------------------------
+# | IMGPROXY                                                    |
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([0-9]+)/([0-9]+)/(.*)      timthumb.php?w=$1&h=$2&src=$3      [L]
+</IfModule>
