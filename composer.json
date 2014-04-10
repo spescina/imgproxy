@@ -1,12 +1,17 @@
 {
         "name": "psimone/imgproxy",
-        "description": "",
+        "description": "An image proxy for Laravel",
+        "keywords": ["laravel", "image", "proxy", "resizer", "crop"],
         "authors": [
                 {
                         "name": "Simone Pescina",
                         "email": "s.pescina@gmail.com"
                 }
         ],
+        "license": "MIT",
+        "support": {
+                "issues": "https://bitbucket.org/psimone/imgproxy/issues"
+        },
         "require": {
                 "php": ">=5.3.0",
                 "illuminate/support": "4.1.*"
