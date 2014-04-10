@@ -21,7 +21,7 @@ Run `composer update`
 
 Add the service provider in the `app/config/app.php` file  
 ```
-'Psimone\Imgproxy\ImgproxyServiceProvider'
+"Psimone\Imgproxy\ImgproxyServiceProvider"
 ```
 
 Publish the package assets running `php artisan asset:publish psimone/imgproxy`
@@ -30,7 +30,7 @@ Publish the package assets running `php artisan asset:publish psimone/imgproxy`
 
 Use the package facade to generate the resource url
 ```
-ImgProxy::link('path/to/image.jpg', 100, 80)
+ImgProxy::link("path/to/image.jpg", 100, 80)
 ```
 This will generate a link like this
 ```
@@ -44,23 +44,23 @@ After publishing the assets it's possible to edit package config in the `public/
 
 These, at the moment, are the default values
 ```
-define ('DEBUG_ON', false);
+define ("DEBUG_ON", false);
 
-define ('DEBUG_LEVEL', 3);
+define ("DEBUG_LEVEL", 3);
 
-define ('FILE_CACHE_MAX_FILE_AGE', 86400);
+define ("FILE_CACHE_MAX_FILE_AGE", 86400);
 
-define ('FILE_CACHE_SUFFIX', '.imgproxy.cache');
+define ("FILE_CACHE_SUFFIX", ".imgproxy.cache");
 
-define ('FILE_CACHE_PREFIX', '');
+define ("FILE_CACHE_PREFIX", "");
 
-define ('FILE_CACHE_DIRECTORY', '../../../../app/storage/cache/imgproxy');
+define ("FILE_CACHE_DIRECTORY", "../../../../app/storage/cache/imgproxy");
 
-define ('NOT_FOUND_IMAGE', './nophoto.gif');
+define ("NOT_FOUND_IMAGE", "./nophoto.gif");
 
-define ('ERROR_IMAGE', './nophoto.gif');
+define ("ERROR_IMAGE", "./nophoto.gif");
 
-define ('PNG_IS_TRANSPARENT', FALSE);
+define ("PNG_IS_TRANSPARENT", FALSE);
 
-define ('DEFAULT_Q', 90);
+define ("DEFAULT_Q", 90);
 ```
