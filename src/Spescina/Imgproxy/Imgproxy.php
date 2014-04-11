@@ -8,7 +8,7 @@ class Imgproxy {
 
         public function link($path, $width, $height)
         {
-                $url = array(self::PREFIX, $width, $path);
+                $url = array(self::PREFIX, $width, $height, $path);
 
                 return URL::to(implode('/', $url));
         }
