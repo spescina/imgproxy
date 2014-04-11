@@ -2,7 +2,7 @@
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Spescina\Imgproxy\Classes\Imgproxy;
+use Spescina\Imgproxy\Imgproxy;
 
 class ImgproxyServiceProvider extends ServiceProvider {
 

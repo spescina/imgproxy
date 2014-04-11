@@ -1,4 +1,4 @@
-<?php namespace Spescina\Imgproxy\Classes;
+<?php namespace Spescina\Imgproxy;
 
 use Illuminate\Support\Facades\URL;
 

@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\URL;
-use Spescina\Imgproxy\Classes\Imgproxy;
+use Spescina\Imgproxy\Imgproxy;
+
+use Mockery as m;
 
 class ImgproxyTest extends PHPUnit_Framework_TestCase {
 
         public function tearDown()
         {
-                Mockery::close();
+                m::close();
         }
         
         public function test_image_link_building()
@@ -21,7 +23,7 @@ class ImgproxyTest extends PHPUnit_Framework_TestCase {
                 
                 $url = $imgProxy->link("image/path/url.jpg", 100, 70);
                 
-                $this->assertEquals("http://www.example.com/packages/spescina/imgproxy/100/70/image/path/url.png", $url);
+                $this->assertEquals("http://www.example.com/packages/spescina/imgproxy/100/70/image/path/url.jpg", $url);
         }
 
 }
