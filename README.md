@@ -7,7 +7,7 @@ Laravel 4 package for image cropping and resizing on the fly. It uses Timthumb u
 Add in `composer.json`  
 ```
 "require": {
-    "psimone/imgproxy": "1.0.*"
+    "spescina/imgproxy": "1.0.*"
 }
 ```
 
@@ -15,10 +15,10 @@ Run `composer update`
 
 Add the service provider in the `app/config/app.php` file  
 ```
-"Psimone\Imgproxy\ImgproxyServiceProvider"
+"Spescina\Imgproxy\ImgproxyServiceProvider"
 ```
 
-Publish the package assets running `php artisan asset:publish psimone/imgproxy`
+Publish the package assets running `php artisan asset:publish spescina/imgproxy`
 
 ## Usage
 
@@ -28,13 +28,13 @@ ImgProxy::link("path/to/image.jpg", 100, 80)
 ```
 This will generate a link like this
 ```
-http://www.yourdomain.com/packages/psimone/imgproxy/100/80/path/to/image.jpg
+http://www.yourdomain.com/packages/spescina/imgproxy/100/80/path/to/image.jpg
 ```
 that generates an image with dimensions 100 x 80 using the original `image.jpg` stored in the `public/path/to` folder.  
 
 ## Config
 
-After publishing the assets it's possible to edit package config in the `public/packages/psimone/imgproxy/timthumb-config.php` file.  
+After publishing the assets it's possible to edit package config in the `public/packages/spescina/imgproxy/timthumb-config.php` file.  
 
 These, at the moment, are the default values
 ```

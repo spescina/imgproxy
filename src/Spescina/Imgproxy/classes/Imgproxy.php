@@ -1,10 +1,10 @@
-<?php namespace Psimone\Imgproxy\Classes;
+<?php namespace Spescina\Imgproxy\Classes;
 
 use Illuminate\Support\Facades\URL;
 
 class Imgproxy {
 
-        const PREFIX = 'packages/psimone/imgproxy';
+        const PREFIX = 'packages/spescina/imgproxy';
 
         public function link($path, $width, $height)
         {
