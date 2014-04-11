@@ -8,7 +8,7 @@ Laravel 4 package for image cropping and resizing on the fly. It uses Timthumb u
 Add in `composer.json`  
 ```
 "require": {
-    "spescina/imgproxy": "1.0.*"
+    "spescina/imgproxy": "2.0.*"
 }
 ```
 
