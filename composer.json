@@ -1,5 +1,5 @@
 {
-        "name": "psimone/imgproxy",
+        "name": "spescina/imgproxy",
         "description": "An image proxy for Laravel",
         "keywords": ["laravel", "image", "proxy", "resizer", "crop"],
         "authors": [
@@ -22,7 +22,7 @@
         },
         "autoload": {
                 "psr-0": {
-                        "Psimone\\Imgproxy": "src/"
+                        "Spescina\\Imgproxy": "src/"
                 }
         },
         "minimum-stability": "stable"

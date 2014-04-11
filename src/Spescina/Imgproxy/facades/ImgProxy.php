@@ -1,4 +1,4 @@
-<?php namespace Psimone\Imgproxy\Facades;
+<?php namespace Spescina\Imgproxy\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

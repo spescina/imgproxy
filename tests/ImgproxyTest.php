@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\URL;
-use Psimone\Imgproxy\Classes\Imgproxy;
+use Spescina\Imgproxy\Classes\Imgproxy;
 
 class ImgproxyTest extends PHPUnit_Framework_TestCase {
 
@@ -14,7 +14,7 @@ class ImgproxyTest extends PHPUnit_Framework_TestCase {
         {
                 $domain = 'http://www.example.com';
                 
-                $prefix = 'packages/psimone/imgproxy';
+                $prefix = 'packages/spescina/imgproxy';
                 
                 $imageUrl = 'image/path/url.jpg';
                 

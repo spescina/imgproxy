@@ -1,8 +1,8 @@
-<?php namespace Psimone\Imgproxy;
+<?php namespace Spescina\Imgproxy;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Psimone\Imgproxy\Classes\Imgproxy;
+use Spescina\Imgproxy\Classes\Imgproxy;
 
 class ImgproxyServiceProvider extends ServiceProvider {
 
@@ -20,7 +20,7 @@ class ImgproxyServiceProvider extends ServiceProvider {
          */
         public function boot()
         {
-                $this->package('psimone/imgproxy');
+                $this->package('spescina/imgproxy');
         }
 
         /**
@@ -49,7 +49,7 @@ class ImgproxyServiceProvider extends ServiceProvider {
 
         private function registerAlias()
         {
-                AliasLoader::getInstance()->alias('ImgProxy', 'Psimone\Imgproxy\Facades\ImgProxy');
+                AliasLoader::getInstance()->alias('ImgProxy', 'Spescina\Imgproxy\Facades\ImgProxy');
         }
 
         private function registerServices()
