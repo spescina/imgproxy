@@ -14,11 +14,10 @@
         },
         "require": {
                 "php": ">=5.3.0",
-                "illuminate/support": "4.1.*"
+                "illuminate/support": "4.x"
         },
         "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.0.14"
+                "mockery/mockery": "0.9.*"
         },
         "autoload": {
                 "psr-0": {
