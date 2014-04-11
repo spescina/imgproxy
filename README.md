@@ -3,7 +3,7 @@
 
 Laravel 4 package for image cropping and resizing on the fly. It uses Timthumb under the hood.
 
-## Install  
+## Install && Usage
 
 Add in `composer.json`  
 ```
@@ -20,8 +20,6 @@ Add the service provider in the `app/config/app.php` file
 ```
 
 Publish the package assets running `php artisan asset:publish spescina/imgproxy`
-
-## Usage
 
 Use the package facade to generate the resource url
 ```
