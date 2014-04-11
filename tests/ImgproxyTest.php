@@ -12,26 +12,16 @@ class ImgproxyTest extends PHPUnit_Framework_TestCase {
         
         public function test_image_link_building()
         {
-                $domain = 'http://www.example.com';
-                
-                $prefix = 'packages/spescina/imgproxy';
-                
-                $imageUrl = 'image/path/url.jpg';
-                
-                $w = 100;
-                
-                $h = 70;
-                
                 URL::shouldReceive('to')
                         ->once()
-                        ->with("$prefix/$w/$h/$imageUrl")
-                        ->andReturn("$domain/$prefix/$w/$h/$imageUrl");
+                        ->with("packages/spescina/imgproxy/100/70/image/path/url.jpg")
+                        ->andReturn("http://www.example.com/packages/spescina/imgproxy/100/70/image/path/url.jpg");
                 
                 $imgProxy = new Imgproxy;
                 
-                $url = $imgProxy->link($imageUrl, $w, $h);
+                $url = $imgProxy->link("image/path/url.jpg", 100, 70);
                 
-                $this->assertEquals("$domain/$prefix/$w/$h/$imageUrl", $url);
+                $this->assertEquals("http://www.example.com/packages/spescina/imgproxy/100/70/image/path/url.png", $url);
         }
 
 }
