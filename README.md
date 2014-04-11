@@ -31,6 +31,22 @@ http://www.yourdomain.com/packages/spescina/imgproxy/100/80/path/to/image.jpg
 ```
 that generates an image with dimensions 100 x 80 using the original `image.jpg` stored in the `public/path/to` folder.  
 
+## Parameters
+
+The `link` function accepts 5 paramaters
+* __image path__
+* __width__
+* __height__
+* __zoom/crop__ - optional [0,1,2,3] - Default: 1
+* __quality__ - optional [0..100] - Default: 90
+
+### Zoom/Crop
+These are the supported values
+* __0__ - Resize to Fit specified dimensions (no cropping)	
+* __1__	- Crop and resize to best fit the dimensions (default)
+* __2__	- Resize proportionally to fit entire image into specified dimensions, and add borders if required
+* __3__	- Resize proportionally adjusting size of scaled image so there are no borders gaps
+
 ## Config
 
 After publishing the assets it's possible to edit package config in the `public/packages/spescina/imgproxy/timthumb-config.php` file.  
