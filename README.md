@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/spescina/imgproxy.svg?branch=develop)](https://travis-ci.org/spescina/imgproxy)
+[![Build Status](https://travis-ci.org/spescina/imgproxy.svg?branch=master)](https://travis-ci.org/spescina/imgproxy)
 [![Coverage Status](https://coveralls.io/repos/spescina/imgproxy/badge.png?branch=develop)](https://coveralls.io/r/spescina/imgproxy?branch=develop)
 # ImageProxy  
 
