@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/spescina/imgproxy.svg?branch=master)](https://travis-ci.org/spescina/imgproxy)
-[![Coverage Status](https://coveralls.io/repos/spescina/imgproxy/badge.png?branch=develop)](https://coveralls.io/r/spescina/imgproxy?branch=develop)
+[![Build Status](https://travis-ci.org/spescina/imgproxy.svg?branch=master)](https://travis-ci.org/spescina/imgproxy?branch=master)
+[![Coverage Status](https://coveralls.io/repos/spescina/imgproxy/badge.png?branch=master)](https://coveralls.io/r/spescina/imgproxy?branch=master)
 # ImageProxy  
 
 Laravel 4 package for image cropping and resizing on the fly. It uses Timthumb under the hood.
