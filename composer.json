@@ -17,7 +17,8 @@
                 "illuminate/support": "4.x"
         },
         "require-dev": {
-                "mockery/mockery": "0.9.*"
+                "mockery/mockery": "0.9.*",
+                "satooshi/php-coveralls": "dev-master"
         },
         "autoload": {
                 "psr-0": {
