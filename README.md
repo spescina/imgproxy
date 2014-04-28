@@ -22,6 +22,8 @@ Add the service provider in the `app/config/app.php` file
 
 Publish the package assets running `php artisan asset:publish spescina/imgproxy`
 
+Publish the package config running `php artisan config:publish spescina/imgproxy`
+
 Use the package facade to generate the resource url
 ```
 ImgProxy::link("path/to/image.jpg", 100, 80)
@@ -50,7 +52,16 @@ These are the supported values
 
 ## Config
 
-After publishing the assets it's possible to edit package config in the `public/packages/spescina/imgproxy/timthumb-config.php` file.  
+### Package config
+
+After publishing the package config file it's possible to change the package behaviour in the `app/config/packages/spescina/imgproxy/config.php` file.  
+
+These are the current options: 
+* __rewrite__ - Default: `true` - If `false` querystring uri are generated instead of pretty ones
+
+### Timthumb config
+
+It's possible to edit timthumb config in the `public/packages/spescina/imgproxy/timthumb-config.php` file.  
 
 These, at the moment, are the default values
 ```
