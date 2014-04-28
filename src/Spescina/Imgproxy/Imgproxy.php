@@ -1,10 +1,12 @@
 <?php namespace Spescina\Imgproxy;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 
 class Imgproxy {
 
         const PREFIX = 'packages/spescina/imgproxy';
+        const FILE = 'timthumb.php';
         
         const Q = 90;
         const ZC = 1;
@@ -15,9 +17,37 @@ class Imgproxy {
                 
                 $zc = is_null($zoomCrop) ? self::ZC : $zoomCrop;
                 
-                $url = array(self::PREFIX, $width, $height, $zc, $q, $path);
-
-                return URL::to(implode('/', $url));
+                $url = array(
+                        'base' => self::PREFIX,
+                        'w' => $width,
+                        'h' => $height,
+                        'zc' => $zc,
+                        'q' => $q,
+                        'src' => $path
+                );
+                
+                return $this->getUrl($url);
+                
+        }
+        
+        private function getUrl($url)
+        {
+                return Config::get('imgproxy::rewrite') ? $this->build_rewrited($url) : $this->build_urlencoded($url);
+        }
+        
+        private function build_urlencoded($url)
+        {
+                $base = array_shift($url);
+                
+                return URL::to($base . '/' . self::FILE . '?' . urldecode(http_build_query($url)));
+                
+        }
+        
+        private function build_rewrited($url)
+        {
+                $values = array_values($url);
+                
+                return URL::to(implode('/', $values));
         }
 
 }
