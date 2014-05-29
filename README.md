@@ -24,6 +24,11 @@ Publish the package assets running `php artisan asset:publish spescina/imgproxy`
 
 Publish the package config running `php artisan config:publish spescina/imgproxy`
 
+ImageProxy is configured to use Apache by default. If you are using nginx, add the following to your site configuration file:
+```
+rewrite ^/packages/spescina/imgproxy/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/(.*) /packages/spescina/imgproxy/timthumb.php?w=$1&h=$2&zc=$3&q=$4&src=$5;
+```
+
 Use the package facade to generate the resource url
 ```
 ImgProxy::link("path/to/image.jpg", 100, 80)
@@ -84,4 +89,52 @@ define ("ERROR_IMAGE", "./nophoto.gif");
 define ("PNG_IS_TRANSPARENT", FALSE);
 
 define ("DEFAULT_Q", 90);
+```
+
+## Full nginx example for Laravel Forge
+
+```
+server {
+    rewrite_log on;
+
+    listen 80;
+    server_name my_site.com;
+    root /home/forge/my_site.com/public;
+
+    auth_basic "Restricted";
+    auth_basic_user_file /home/forge/my_site.com/public/.htpasswd;
+
+    # FORGE SSL (DO NOT REMOVE!)
+    # ssl on;
+    # ssl_certificate;
+    # ssl_certificate_key;
+
+    index index.html index.htm index.php;
+
+    charset utf-8;
+
+    location / {
+        rewrite ^/packages/spescina/imgproxy/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/(.*) /packages/spescina/imgproxy/timthumb.php?w=$1&h=$2&zc=$3&q=$4&src=$5;
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    access_log off;
+    error_log  /var/log/nginx/my_site.com-error.log error;
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
 ```
