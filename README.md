@@ -45,8 +45,8 @@ The `link` function accepts 5 paramaters
 * __image path__
 * __width__
 * __height__
-* __zoom/crop__ - optional [0,1,2,3] - Default: 1
 * __quality__ - optional [0..100] - Default: 90
+* __zoom/crop__ - optional [0,1,2,3] - Default: 1
 
 ### Zoom/Crop
 These are the supported values
