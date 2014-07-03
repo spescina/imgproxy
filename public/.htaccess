@@ -3,6 +3,7 @@
 # ------------------------------------------------------------------------------
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteBase /packages/spescina/imgproxy/
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/(.*)      timthumb.php?w=$1&h=$2&zc=$3&q=$4&src=$5      [L]
